@@ -1,5 +1,4 @@
-
-
+import json
 import dlib
 import numpy as np
 import face_recognition_models
@@ -51,8 +50,11 @@ def get_trained_model():
     for student in student_db:
         embedding = student.get('face_embedding')
         if embedding:
-            X.append(np.array(embedding))
-            y.append(student.get('student_id'))
+            if isinstance(embedding, str):
+                embedding = json.loads(embedding)  # convert string to list
+            
+            X.append(np.array(embedding, dtype=np.float64))
+            y.append(student.get('id'))
 
     if len(X) ==0:
         return 0
@@ -91,9 +93,9 @@ def predict_attendance(class_image_np):
 
     for encoding in encodings:
         if len(all_students)>= 2:
-            predicted_id= int(clf.predict([encoding])[0])
+            predicted_id = clf.predict([encoding])[0]
         else:
-            predicted_id = int(all_students[0])
+            predicted_id = all_students[0]
 
         student_embedding = X_train[y_train.index(predicted_id)]
 

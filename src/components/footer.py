@@ -2,24 +2,36 @@ import streamlit as st
 
 
 def footer_home():
-    logo_url = "https://i.ibb.co/4r5X1FY/apnacollege.png"
-    
-    st.markdown(f"""
-        <div style="margin-top:2rem; display:flex; gap:6px; justify-content:center; items-align:center">
-        <p style="font-weight:bold; color:white;"> Created with ❤️ by </p>  
-        <img src='{logo_url}' style='max-height:25px' />
+    st.markdown("""
+        <div style="
+            margin-top: 48px;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        ">
+            <p style="
+                color: rgba(255,255,255,0.3);
+                font-size: 0.8rem;
+                font-family: 'DM Sans', sans-serif;
+                margin: 0;
+            ">© 2026 Upastithi — AI Attendance System</p>
         </div>
-                
-                """, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
 
 def footer_dashboard():
-    logo_url = "https://i.ibb.co/4r5X1FY/apnacollege.png"
-    
-    st.markdown(f"""
-        <div style="margin-top:2rem; display:flex; gap:6px; justify-content:center; items-align:center">
-        <p style="font-weight:bold; color:black;"> Created with ❤️ by </p>  
-        <img src='{logo_url}' style='max-height:25px' />
+    st.markdown("""
+        <div style="
+            margin-top: 48px;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        ">
+            <p style="
+                color: rgba(255,255,255,0.3);
+                font-size: 0.8rem;
+                font-family: 'DM Sans', sans-serif;
+                margin: 0;
+            ">© 2026 Upastithi — AI Attendance System</p>
         </div>
-                
-                """, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
